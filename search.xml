@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[人生长恨水长东]]></title>
-      <url>/2017/09/02/hello/</url>
+      <url>/2017/09/02/changhenge/</url>
       <content type="html"><![CDATA[<p>#打卡今年读完的一本书，王安忆的《长恨歌》#<br>今天开始，用git写自己的小博客。在reading list这个tag里面，记录的就是自己读过的书。</p>
 ]]></content>
       
@@ -14,6 +14,20 @@
             <tag> Reading List </tag>
             
         </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello All]]></title>
+      <url>/2017/09/02/hello/</url>
+      <content type="html"><![CDATA[<p>Starting from today, I hope that I can keep this blog alive.<br>I am going to post the following things:</p>
+<ol>
+<li>Statistic<br> – statistical models<br> – statistical concepts</li>
+<li>Computing science<br> – computing science skills<br> – computing science algorithms</li>
+<li>reading list<br> – Some reviews and comments about the books I read.</li>
+</ol>
+]]></content>
+      
         
     </entry>
     
