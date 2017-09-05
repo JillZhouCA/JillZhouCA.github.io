@@ -3,6 +3,81 @@
   
     
     <entry>
+      <title><![CDATA[微信小程序（1）]]></title>
+      <url>/2017/09/04/wechatapp1/</url>
+      <content type="html"><![CDATA[<p>#小打卡微信小程序学习日#</p>
+<p>若需快速建立一个微信小程序，直接点击:<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/" target="_blank" rel="external">https://mp.weixin.qq.com/debug/wxadoc/dev/</a>。微信公众平台在这里写好了第一个小程序的code，直接复制粘贴即可试水。</p>
+<p>强撑我是一个程序媛的尊严，决定写一些东西深度理解一下微信小程序。今天是理解小程序的第一天，了解了一下微信小程序基本构架。</p>
+<p>从大框架看，我们先把一众小程序文件结构分类。如网上一众可以找到的小程序开发博客所总结的那样，小程序的主体文件由一下的文件组成：<br><table class="table">
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">usage</th>
+<th style="text-align:center">necessary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">app.js</td>
+<td style="text-align:center">控制整个小程序的逻辑</td>
+<td style="text-align:center">YES</td>
+</tr>
+<tr>
+<td style="text-align:center">app.json</td>
+<td style="text-align:center">对整个小程序做设置</td>
+<td style="text-align:center">YES</td>
+</tr>
+<tr>
+<td style="text-align:center">app.wxss</td>
+<td style="text-align:center">对整个小程序的页面/框架做装饰</td>
+<td style="text-align:center">NO</td>
+</tr>
+</tbody>
+</table>
+<br>那么，全局设置好了之后呢，具体到每一个页面的内容，就需要下面的这些文件了：<br><table class="table">
+<thead>
+<tr>
+<th style="text-align:center">suffix</th>
+<th style="text-align:center">usage</th>
+<th style="text-align:center">necessary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">js</td>
+<td style="text-align:center">主管页面逻辑（它可以让你的这个页面活起来，是你赋予你程序的大脑）</td>
+<td style="text-align:center">YES</td>
+</tr>
+<tr>
+<td style="text-align:center">wxml</td>
+<td style="text-align:center">可以看做&quot;微信ml&quot;,类似html作用，调控页面结构</td>
+<td style="text-align:center">YES</td>
+</tr>
+<tr>
+<td style="text-align:center">wxss</td>
+<td style="text-align:center">看做&quot;微信ss&quot;,类似css作用，装饰页面</td>
+<td style="text-align:center">NO</td>
+</tr>
+<tr>
+<td style="text-align:center">json</td>
+<td style="text-align:center">负责页面配置，configuration file</td>
+<td style="text-align:center">NO</td>
+</tr>
+</tbody>
+</table>
+<br>对于以上的这四类文件，你做的每一个页面的这四个文件都需要放在同一个文件夹内，并且文件名前缀要和文件夹名字一致。比如说，你如果有个页面记录log, 那么就有个folder叫log，里面所有的文件都是log.js, log.wxss, etc.</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> wechatapp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[人生长恨水长东]]></title>
       <url>/2017/09/02/changhenge/</url>
       <content type="html"><![CDATA[<p>#打卡今年读完的一本书，王安忆的《长恨歌》#<br>今天开始，用git写自己的小博客。在reading list这个tag里面，记录的就是自己读过的书。</p>
