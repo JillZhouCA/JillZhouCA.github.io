@@ -76,6 +76,12 @@
 <br>对于以上的这四类文件，你做的每一个页面的这四个文件都需要放在同一个文件夹内，并且文件名前缀要和文件夹名字一致。比如说，你如果有个页面记录log, 那么就有个folder叫log，里面所有的文件都是log.js, log.wxss, etc.</p>
 ]]></content>
       
+        <categories>
+            
+            <category> wechatapp </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -101,6 +107,12 @@
 <p>总之，本书，值得一读。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 读书笔记 </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -126,6 +138,18 @@
     
   
   
+    
+    <entry>
+      <title><![CDATA[categories]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
     
   
 </search>
