@@ -3,10 +3,65 @@
   
     
     <entry>
-      <title><![CDATA[install-pytorch-win]]></title>
+      <title><![CDATA[在windows环境下安装pytorch]]></title>
       <url>/2018/05/11/install-pytorch-win/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<p>对于Windows的吐槽直接就忽略吧，切入主题。</p>
+<h4 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h4><ol>
+<li>64-bit</li>
+<li>windows7</li>
+<li>no CPU</li>
+</ol>
+<h4 id="最好的安装方法"><a href="#最好的安装方法" class="headerlink" title="最好的安装方法"></a>最好的安装方法</h4><ol>
+<li><p>install ANACONDA (附上<a href="https://www.anaconda.com/download/#windows" title="windows anaconda install" target="_blank" rel="external">ANACONDA windows Install link</a>)</p>
+<ul>
+<li>由于pytorch 在Windows不支持Python 2.7版本，<strong>请毫不犹豫下载Anaconda 5.1 的Python 3.6 version。</strong></li>
+<li>安装的时候除了全部都是default，最后一个界面是问你要不要了解一下ANACONDA，看心情选择了解与否。</li>
+<li>安装需要admin 权限（告知没有权限的亲）。</li>
+</ul>
+</li>
+<li><p>安装好后将\path\to\installed_location\Continuum\anaconda3，<br>以及path\to\installed\location\Continuum\anaconda3\Scripts加入到PATH，以便未来方便使用</p>
+<ul>
+<li>PATH位于：“Computer &gt; System properties &gt; Advanced system setting”</li>
+<li>本步骤需要admin权限</li>
+<li>开一个Command Prompt, run “conda -V”。如有version信息返回，则为正确。</li>
+</ul>
+</li>
+<li><p>去到<a href="https://pytorch.org/" target="_blank" rel="external">pytorch</a>界面，选择好和你自己环境相关的选项信息，然后run相应的command。</p>
+<ul>
+<li>无需纠结pip还是pip3。在anaconda3环境管理下，pip和pip3是一个东西。当然不能全信，可以run “pip -V”验证，如果version显示为anaconda3环境管理下的python3环境即为正确。</li>
+<li>有时候会被告知安装的pip版本过旧，请根据自动提示信息更新。</li>
+<li>有可能dependence缺少，请依据环境信息更新。</li>
+</ul>
+</li>
+<li><p>安装好后，在command prompt 内 run “py -3”以运行python3。接着run “import torch”。<br>如无问题即完成安装。</p>
+<ul>
+<li>如果找不到Torch module，请尝试以下步骤:<blockquote><ol>
+<li>conda update conda</li>
+<li>conda install mkl=2018</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h4><p>之前希望直接安装python3.5 然后再安装pytorch。成功安装pytorch后，运行时候被告知：<br><blockquote><p>from torch._C import *<br>ImportError: DLL load failed: The specified module could not be found</p>
+</blockquote><br>查了类似错误发现是需要补救一些library给Windows。按照网上前辈的方法找好放好后还是不行。不知道是python3.5的坑还是我这台电脑大环境的坑，也未尝试升级python3.6后会不会有改变。但是<strong>还是conda安装简便靠谱，因为conda环境里面已经埋平了一些坑</strong>。</p>
+]]></content>
       
+        <categories>
+            
+            <category> Environment setup </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> package installation </tag>
+            
+            <tag> AI programming </tag>
+            
+        </tags>
         
     </entry>
     
@@ -173,9 +228,9 @@
       <url>/2017/09/02/hello/</url>
       <content type="html"><![CDATA[<p>Starting from today, I hope that I can keep this blog alive.<br>I am going to post the following things:</p>
 <ol>
-<li>Statistic<br> – statistical models<br> – statistical concepts</li>
-<li>Computing science<br> – computing science skills<br> – computing science algorithms</li>
-<li>reading list<br> – Some reviews and comments about the books I read.</li>
+<li>Statistic<br> -- statistical models<br> -- statistical concepts</li>
+<li>Computing science<br> -- computing science skills<br> -- computing science algorithms</li>
+<li>reading list<br> -- Some reviews and comments about the books I read.</li>
 </ol>
 ]]></content>
       
@@ -186,14 +241,14 @@
   
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
