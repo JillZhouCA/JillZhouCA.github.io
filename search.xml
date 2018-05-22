@@ -35,46 +35,59 @@
     <entry>
       <title><![CDATA[OOD learning（1）]]></title>
       <url>/2018/05/14/OOD-learning-1/</url>
-      <content type="html"><![CDATA[<h2 id="CHAPTER-1-A-Crash-Course-in-Java-Incomplete"><a href="#CHAPTER-1-A-Crash-Course-in-Java-Incomplete" class="headerlink" title="CHAPTER 1 A Crash Course in Java (Incomplete)"></a>CHAPTER 1 A Crash Course in Java (Incomplete)</h2><ol>
-<li><p>a class definition contains:</p>
+      <content type="html"><![CDATA[<h2 id="chapter-1-a-crash-course-in-java-incomplete"><a class="header-anchor" href="#chapter-1-a-crash-course-in-java-incomplete">¶</a>CHAPTER 1 A Crash Course in Java (Incomplete)</h2>
+<ol>
+<li>
+<p>a class definition contains:</p>
 <ul>
 <li>constructors</li>
-<li>methods </li>
+<li>methods</li>
 <li>fields</li>
 </ul>
 </li>
-<li><p>Object-oriented programming follows the <strong>“client-server” model</strong>. The client code requests a <strong>service by invoking a method</strong> on an object.</p>
+<li>
+<p>Object-oriented programming follows the <strong>“client-server” model</strong>. The client code requests a <strong>service by invoking a method</strong> on an object.</p>
 </li>
-<li><p>In Java, an object value is always a reference to an object, or, i n other words, a value that describes the location of the object.</p>
+<li>
+<p>In Java, an object value is always a reference to an object, or, i n other words, a value that describes the location of the object.</p>
 <ul>
 <li>do a deep copy by implementing/using clone method</li>
 </ul>
 </li>
-<li><p>The special reference nul l refers to no object. You can set an object variable to null:     - worldGreeter = null;</p>
+<li>
+<p>The special reference nul l refers to no object. You can set an object variable to null: 	- worldGreeter = null;</p>
 <ul>
-<li>If you invoke a method on a null reference,a NullPointerException is thrown. </li>
+<li>If you invoke a method on a null reference,a NullPointerException is thrown.</li>
 </ul>
 </li>
-<li><p>However, in Java, a method can never update the contents ofa variable that is passed as a parameter.</p>
+<li>
+<p>However, in Java, a method can never update the contents ofa variable that is passed as a parameter.</p>
 </li>
 </ol>
-<h2 id="CHAPTER-2-The-Object-Oriented-Design-Process"><a href="#CHAPTER-2-The-Object-Oriented-Design-Process" class="headerlink" title="CHAPTER 2 The Object-Oriented Design Process"></a>CHAPTER 2 The Object-Oriented Design Process</h2><h3 id="From-Problem-to-Code"><a href="#From-Problem-to-Code" class="headerlink" title="From Problem to Code"></a>From Problem to Code</h3><h4 id="The-analysis-phase"><a href="#The-analysis-phase" class="headerlink" title="The analysis phase"></a>The analysis phase</h4><ol>
-<li>The goal of the analysis phase is a complete description of what the software product should do. (called functional specification)<ul>
+<h2 id="chapter-2-the-object-oriented-design-process"><a class="header-anchor" href="#chapter-2-the-object-oriented-design-process">¶</a>CHAPTER 2 The Object-Oriented Design Process</h2>
+<h3 id="from-problem-to-code"><a class="header-anchor" href="#from-problem-to-code">¶</a>From Problem to Code</h3>
+<h4 id="the-analysis-phase"><a class="header-anchor" href="#the-analysis-phase">¶</a>The analysis phase</h4>
+<ol>
+<li>The goal of the analysis phase is a complete description of what the software product should do. (called functional specification)
+<ul>
 <li>user manual</li>
 <li>a set of user cases</li>
 <li>focus on <strong>what</strong> it should be done</li>
 </ul>
 </li>
 </ol>
-<h4 id="The-Design-Phase"><a href="#The-Design-Phase" class="headerlink" title="The Design Phase"></a>The Design Phase</h4><ol>
+<h4 id="the-design-phase"><a class="header-anchor" href="#the-design-phase">¶</a>The Design Phase</h4>
+<ol>
 <li>Each class must be specified precisely, listing both its responsi­ bilities and its relationship to other classes in the system.</li>
-<li>major goals:<ul>
+<li>major goals:
+<ul>
 <li>Identify the classes</li>
 <li>Identify the <strong>responsibilities</strong> of these classes</li>
 <li>Identify the <strong>relationships</strong> among these classes</li>
 </ul>
 </li>
-<li>the end result consist of the following artifacts:<ul>
+<li>the end result consist of the following artifacts:
+<ul>
 <li>A textual description of the classes and their most important responsibilities</li>
 <li>Diagrams of the relationships among the classes</li>
 <li>Diagrams of important usage scenarios</li>
@@ -82,78 +95,99 @@
 </ul>
 </li>
 </ol>
-<h4 id="Implementation-phase"><a href="#Implementation-phase" class="headerlink" title="Implementation phase"></a>Implementation phase</h4><p>Implement the prototype and refine your design as needed</p>
-<h3 id="The-object-and-class-Concept"><a href="#The-object-and-class-Concept" class="headerlink" title="The object and class Concept"></a>The object and class Concept</h3><ol>
-<li>Objects are entities in a computer program that have three character­ istic properties:<ul>
+<h4 id="implementation-phase"><a class="header-anchor" href="#implementation-phase">¶</a>Implementation phase</h4>
+<p>Implement the prototype and refine your design as needed</p>
+<h3 id="the-object-and-class-concept"><a class="header-anchor" href="#the-object-and-class-concept">¶</a>The object and class Concept</h3>
+<ol>
+<li>Objects are entities in a computer program that have three character­ istic properties:
+<ul>
 <li>State (like the property variables in there)</li>
 <li>Behavior (like methods)</li>
 <li>Identity</li>
 </ul>
 </li>
 </ol>
-<h3 id="Identifying-classes"><a href="#Identifying-classes" class="headerlink" title="Identifying classes"></a>Identifying classes</h3><ol>
+<h3 id="identifying-classes"><a class="header-anchor" href="#identifying-classes">¶</a>Identifying classes</h3>
+<ol>
 <li>A simple rule of thumb for identifYing classes is to look for nouns in the functional specification, such as “Mailbox”, “Menu” etc.</li>
 </ol>
-<h3 id="Identifying-Responsibilities"><a href="#Identifying-Responsibilities" class="headerlink" title="Identifying Responsibilities"></a>Identifying Responsibilities</h3><ol>
+<h3 id="identifying-responsibilities"><a class="header-anchor" href="#identifying-responsibilities">¶</a>Identifying Responsibilities</h3>
+<ol>
 <li>Just as classes correspond to nouns in the problem description, respon­ sibilities correspond to verbs</li>
 </ol>
-<h3 id="Relationships-Between-Classes"><a href="#Relationships-Between-Classes" class="headerlink" title="Relationships Between Classes"></a>Relationships Between Classes</h3><ol>
-<li>Three relationships are common among classes:<ul>
+<h3 id="relationships-between-classes"><a class="header-anchor" href="#relationships-between-classes">¶</a>Relationships Between Classes</h3>
+<ol>
+<li>Three relationships are common among classes:
+<ul>
 <li>Dependency (“uses”)</li>
 <li>Aggregation (“has”)</li>
 <li>Inheritance (“is”)</li>
 </ul>
 </li>
 </ol>
-<h4 id="Dependency-“uses”"><a href="#Dependency-“uses”" class="headerlink" title="Dependency (“uses”)"></a>Dependency (“uses”)</h4><p>One important design goal is to minimize the number of dependency relationships; that is, to minimize the coupling between classes. (If one class is unaware of the existence of another, it is also unconcerned about any changes in that other class. <strong>A low degree of coupling tends to make it much easier to implement changes in the future.</strong>)</p>
-<h4 id="Aggregation-“has”"><a href="#Aggregation-“has”" class="headerlink" title="Aggregation (“has”)"></a>Aggregation (“has”)</h4><ol>
-<li>Aggregation takes place if objects of one class contain objects of another class over a period of time. </li>
+<h4 id="dependency-uses"><a class="header-anchor" href="#dependency-uses">¶</a>Dependency (“uses”)</h4>
+<p>One important design goal is to minimize the number of dependency relationships; that is, to minimize the coupling between classes. (If one class is unaware of the existence of another, it is also unconcerned about any changes in that other class. <strong>A low degree of coupling tends to make it much easier to implement changes in the future.</strong>)</p>
+<h4 id="aggregation-has"><a class="header-anchor" href="#aggregation-has">¶</a>Aggregation (“has”)</h4>
+<ol>
+<li>Aggregation takes place if objects of one class contain objects of another class over a period of time.</li>
 <li>Aggregation is a special case of dependency. Of course, if a class contains objects of another class, then it is acutely aware of the existence of that class.</li>
 <li>Aggregation is often informally described as the “has-a” relationship. A message queue has a message.</li>
 </ol>
-<h4 id="Inheritance-“is”"><a href="#Inheritance-“is”" class="headerlink" title="Inheritance (“is”)"></a>Inheritance (“is”)</h4><ol>
+<h4 id="inheritance-is"><a class="header-anchor" href="#inheritance-is">¶</a>Inheritance (“is”)</h4>
+<ol>
 <li>A class inherits from another if all objects of its class are special cases of objects of the other class, capable of exhibiting the same behavior but possibly with additional responsibilities and a richer state.</li>
 </ol>
-<h3 id="User-case"><a href="#User-case" class="headerlink" title="User case"></a>User case</h3><ul>
+<h3 id="user-case"><a class="header-anchor" href="#user-case">¶</a>User case</h3>
+<ul>
 <li>Use cases are an analysis technique to describe in a formal way how a computer system should work. Each use case focuses on a specific scenario, and describes the steps that are necessary to bring it to successful completion.</li>
 <li>A use case lists a sequence of actions that yields a result that is of value to an actor.</li>
 <li>A use case should include variations that describe these situations.</li>
 </ul>
-<h3 id="CRC-card-skipped-for-now"><a href="#CRC-card-skipped-for-now" class="headerlink" title="CRC card (skipped for now)"></a>CRC card (skipped for now)</h3><ul>
-<li>The CRC card method is an effective design technique for discovering classes, responsibilities, and relationships. A CRC card is simply an index card that describes one class and lists its responsibilities and collaborators (dependent classes). </li>
-<li>You make one card for each discovered class. Write the class name at the top ofthe card. Below, on the <strong>left-hand side, you describe the responsibilities</strong>. On the right-hand side, you <strong>list other classes that need to collaborate</strong> with this class so that it can fulfill its responsibilities.<ul>
+<h3 id="crc-card-skipped-for-now"><a class="header-anchor" href="#crc-card-skipped-for-now">¶</a>CRC card (skipped for now)</h3>
+<ul>
+<li>The CRC card method is an effective design technique for discovering classes, responsibilities, and relationships. A CRC card is simply an index card that describes one class and lists its responsibilities and collaborators (dependent classes).</li>
+<li>You make one card for each discovered class. Write the class name at the top ofthe card. Below, on the <strong>left-hand side, you describe the responsibilities</strong>. On the right-hand side, you <strong>list other classes that need to collaborate</strong> with this class so that it can fulfill its responsibilities.
+<ul>
 <li>The responsibilities should be at a high level. Don’t write individual methods.</li>
 </ul>
 </li>
 </ul>
-<h3 id="UML-Class-Diagrams"><a href="#UML-Class-Diagrams" class="headerlink" title="UML Class Diagrams"></a>UML Class Diagrams</h3><ul>
-<li>The basic UML notation for class diagrams is fairly simple.<ul>
-<li>Classes are drawn as boxes<ul>
-<li>contains class name, attributes and methods<ul>
-<li>You usually do not list all attributes and methods, only the most important ones.</li>
-<li>Often, the types of attributes, parameters, and return values are omitted to conserve space. </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>UML connectors<center><br><img src="/2018/05/14/OOD-learning-1/UML_Connector.png" width="70%" height="70%" alt="UML connector"><br></center>
-
-</li>
-</ul>
-<h3 id="Sequence-Diagram"><a href="#Sequence-Diagram" class="headerlink" title="Sequence Diagram"></a>Sequence Diagram</h3><p>In contrast, a sequence diagram shows the dynamics of a particular scenario.</p>
+<h3 id="uml-class-diagrams"><a class="header-anchor" href="#uml-class-diagrams">¶</a>UML Class Diagrams</h3>
 <ul>
-<li>In UML, you use underline to distinguish object rectangles from class rectangles. The text inside an object rectangle has one of the following three formats:<ul>
+<li>The basic UML notation for class diagrams is fairly simple.
+<ul>
+<li>Classes are drawn as boxes
+<ul>
+<li>contains class name, attributes and methods
+<ul>
+<li>You usually do not list all attributes and methods, only the most important ones.</li>
+<li>Often, the types of attributes, parameters, and return values are omitted to conserve space.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>UML connectors</li>
+</ul>
+<center>
+<img src="/2018/05/14/OOD-learning-1/UML_Connector.png" width="70%" height="70%" alt="UML connector">
+</center>
+<h3 id="sequence-diagram"><a class="header-anchor" href="#sequence-diagram">¶</a>Sequence Diagram</h3>
+<p>In contrast, a sequence diagram shows the dynamics of a particular scenario.</p>
+<ul>
+<li>In UML, you use underline to distinguish object rectangles from class rectangles. The text inside an object rectangle has one of the following three formats:
+<ul>
 <li>obj ectName : (1 assName (full description)</li>
 <li>obj ectName (class not specified)</li>
 <li>: (1 assName (object not specified)</li>
 </ul>
 </li>
-<li>The dashed vertical line that emanates from the object is called the lifeline. </li>
-<li>The rectangles along the lifeline are called activation bars. </li>
+<li>The dashed vertical line that emanates from the object is called the lifeline.</li>
+<li>The rectangles along the lifeline are called activation bars.</li>
 </ul>
-<h3 id="State-Diagrams"><a href="#State-Diagrams" class="headerlink" title="State Diagrams"></a>State Diagrams</h3><p>Some objects have a discrete set of states that affect their behavior. </p>
+<h3 id="state-diagrams"><a class="header-anchor" href="#state-diagrams">¶</a>State Diagrams</h3>
+<p>Some objects have a discrete set of states that affect their behavior.</p>
 <p><strong>REFERENCE: Object-oriented design &amp; patterns / Cay Horstmann. (Cay S. Horstmann 1959- Hoboken, NJ : Wiley 2006)</strong></p>
 ]]></content>
       
@@ -180,46 +214,58 @@
       <title><![CDATA[在windows环境下安装pytorch]]></title>
       <url>/2018/05/11/install-pytorch-win/</url>
       <content type="html"><![CDATA[<p>对于Windows的吐槽直接就忽略吧，切入主题。</p>
-<h4 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h4><ol>
+<h4 id="本机环境"><a class="header-anchor" href="#本机环境">¶</a>本机环境</h4>
+<ol>
 <li>64-bit</li>
 <li>windows7</li>
 <li>no CPU</li>
 </ol>
-<h4 id="最好的安装方法"><a href="#最好的安装方法" class="headerlink" title="最好的安装方法"></a>最好的安装方法</h4><ol>
-<li><p>install ANACONDA (附上<a href="https://www.anaconda.com/download/#windows" title="windows anaconda install" target="_blank" rel="external">ANACONDA windows Install link</a>)</p>
+<h4 id="最好的安装方法"><a class="header-anchor" href="#最好的安装方法">¶</a>最好的安装方法</h4>
+<ol>
+<li>
+<p>install ANACONDA (附上<a href="https://www.anaconda.com/download/#windows" title="windows anaconda install" target="_blank" rel="external">ANACONDA windows Install link</a>)</p>
 <ul>
 <li>由于pytorch 在Windows不支持Python 2.7版本，<strong>请毫不犹豫下载Anaconda 5.1 的Python 3.6 version。</strong></li>
 <li>安装的时候除了全部都是default，最后一个界面是问你要不要了解一下ANACONDA，看心情选择了解与否。</li>
 <li>安装需要admin 权限（告知没有权限的亲）。</li>
 </ul>
 </li>
-<li><p>安装好后将\path\to\installed_location\Continuum\anaconda3，<br>以及path\to\installed\location\Continuum\anaconda3\Scripts加入到PATH，以便未来方便使用</p>
+<li>
+<p>安装好后将\path\to\installed_location\Continuum\anaconda3，<br>
+以及path\to\installed\location\Continuum\anaconda3\Scripts加入到PATH，以便未来方便使用</p>
 <ul>
 <li>PATH位于：“Computer &gt; System properties &gt; Advanced system setting”</li>
 <li>本步骤需要admin权限</li>
-<li>开一个Command Prompt, run “conda -V”。如有version信息返回，则为正确。</li>
+<li>开一个Command Prompt, run “conda -V&quot;。如有version信息返回，则为正确。</li>
 </ul>
 </li>
-<li><p>去到<a href="https://pytorch.org/" target="_blank" rel="external">pytorch</a>界面，选择好和你自己环境相关的选项信息，然后run相应的command。</p>
+<li>
+<p>去到<a href="https://pytorch.org/" target="_blank" rel="external">pytorch</a>界面，选择好和你自己环境相关的选项信息，然后run相应的command。</p>
 <ul>
-<li>无需纠结pip还是pip3。在anaconda3环境管理下，pip和pip3是一个东西。当然不能全信，可以run “pip -V”验证，如果version显示为anaconda3环境管理下的python3环境即为正确。</li>
+<li>无需纠结pip还是pip3。在anaconda3环境管理下，pip和pip3是一个东西。当然不能全信，可以run &quot;pip -V&quot;验证，如果version显示为anaconda3环境管理下的python3环境即为正确。</li>
 <li>有时候会被告知安装的pip版本过旧，请根据自动提示信息更新。</li>
 <li>有可能dependence缺少，请依据环境信息更新。</li>
 </ul>
 </li>
-<li><p>安装好后，在command prompt 内 run “py -3”以运行python3。接着run “import torch”。<br>如无问题即完成安装。</p>
+<li>
+<p>安装好后，在command prompt 内 run &quot;py -3&quot;以运行python3。接着run &quot;import torch”。<br>
+如无问题即完成安装。</p>
 <ul>
-<li>如果找不到Torch module，请尝试以下步骤:<blockquote><ol>
+<li>如果找不到Torch module，请尝试以下步骤:</li>
+</ul>
+<blockquote><ol>
 <li>conda update conda</li>
 <li>conda install mkl=2018</li>
 </ol>
 </blockquote>
 </li>
-</ul>
-</li>
 </ol>
-<h4 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h4><p>之前希望直接安装python3.5 然后再安装pytorch。成功安装pytorch后，运行时候被告知：<br><blockquote><p>from torch._C import *<br>ImportError: DLL load failed: The specified module could not be found</p>
-</blockquote><br>查了类似错误发现是需要补救一些library给Windows。按照网上前辈的方法找好放好后还是不行。不知道是python3.5的坑还是我这台电脑大环境的坑，也未尝试升级python3.6后会不会有改变。但是<strong>还是conda安装简便靠谱，因为conda环境里面已经埋平了一些坑</strong>。</p>
+<h4 id="遇到的坑"><a class="header-anchor" href="#遇到的坑">¶</a>遇到的坑</h4>
+<p>之前希望直接安装python3.5 然后再安装pytorch。成功安装pytorch后，运行时候被告知：</p>
+<blockquote><p>from torch._C import *<br>
+ImportError: DLL load failed: The specified module could not be found</p>
+</blockquote>
+<p>查了类似错误发现是需要补救一些library给Windows。按照网上前辈的方法找好放好后还是不行。不知道是python3.5的坑还是我这台电脑大环境的坑，也未尝试升级python3.6后会不会有改变。但是<strong>还是conda安装简便靠谱，因为conda环境里面已经埋平了一些坑</strong>。</p>
 ]]></content>
       
         <categories>
@@ -242,32 +288,53 @@
     <entry>
       <title><![CDATA[New York! 纽约！]]></title>
       <url>/2018/05/04/newyork-trip/</url>
-      <content type="html"><![CDATA[<p>选择要去纽约旅行，纯粹是两个重度拖延症患者（我以及闺蜜JD小姐）的闲聊结果。估计原因在于我怨念了一下去年由于种种原因最后也没有成行的Banff之旅。记不清楚为何最后决定是去纽约，但是我们俩就你追我赶的定了机票，定了酒店，还很积极的开始做了攻略。<br>然而越做攻略越后悔，因为，查到最后就感觉没什么好逛的。那些响彻各大新闻的名字，比如时代广场，比如华尔街，比如中央公园，看攻略觉得那些貌似就是一个广场、一个街区、一个公园。再加之恐怖分子的硝烟不断，川普老爷的政策新闻不断，临走前，我在走与不走的边缘不断徘徊，几度怕死想退票，一直到免费退订期限过去才正式请假。哦，对了，我们的攻略也在不了了之了。好在我和DD同学都很随意，都有着一颗宅在hotel也无怨无悔的心。当我的假期正式开始，我拖着行李箱去了温哥华的公共车站，准备坐大巴去西雅图。啰嗦了那么多，干货来了。</p>
-<h1 id="大致预订项目"><a href="#大致预订项目" class="headerlink" title="大致预订项目"></a>大致预订项目</h1><p><strong>PS: 我们的旅行时间是四月底五月初，机票和酒店的价格会随着旅行时间不同有大变化（淡季和旺季，你懂的）。</strong></p>
-<h2 id="机票-大巴"><a href="#机票-大巴" class="headerlink" title="机票 + 大巴"></a>机票 + 大巴</h2><p>我的出发地点是温哥华，我村距离美国著名的西雅图坐大巴车即可到达。当时在查票价的时候，温哥华飞纽约比西雅图飞纽约要足足贵了一倍（我不明白原因）。大致<em>单程</em>的票价类似是<strong>温哥华飞纽约要 C$400-500，可是西雅图飞纽约<em>单程</em>大致C$200左右</strong>。又由于DD同学住在西雅图，于是可以愉快的在西雅图呆一晚上第二天中转。我们就果断的选择了从西雅图出发。另外，温哥华去西雅图的大巴有灰狗巴士或者bolt bus，比较而言，<strong>bolt bus 路上时间更短（不去202 奥莱的原因），价格也更便宜（比灰狗便宜几刀）</strong>于是买了bolt bus（另外还有quick bus，就没有了解过。因为在温哥华这边的始发站地点我没搞明白在哪里）。<br>在这里，机票的具体价格和大巴的具体价格我就不说了，这些价格会时不时变化，价格不足参考。</p>
-<h2 id="酒店"><a href="#酒店" class="headerlink" title="酒店"></a>酒店</h2><p>出发前查阅了许多酒店，最后由于当时比较好的deal在万豪位于第五大道附近的springhill酒店，就预订了那家。但是这家酒店不是很推荐大家选择，单纯因为四星的价格只给了我三星的酒店设置（虽然我的窗户打开窗帘就可以直接看到帝国大厦，但是，我又不是来看窗外的..）。酒店住的话，推荐大家在曼哈顿中城区（manhattan midtown）附近选择，安全又方便。</p>
-<h2 id="Explorer-pass"><a href="#Explorer-pass" class="headerlink" title="Explorer pass"></a>Explorer pass</h2><p>纽约各种各样的pass很多，比大多数旅行城市只发给的city pass要丰富。有那种几天随便走但是几百刀的，也有给出一些固定景点在一个本票里让你随便选。还有就是我们选择的这种，列出了一堆景点，你有权利去兑换其中几个地方。具体几个地方，你就可以选了。当然，票价和你选择的景点数目成正比。这种票在expedia和它自己的官网都有出售。具体买哪种，真的要靠你自己的旅行时间长短和计划决定。<strong>提前网上预订有优惠</strong>，就这一个理由，你就应该在你知道你去几天的时候订起来。保守估计自己可以<strong>一天去俩景点观光/一个博物馆</strong>。依据这个估计去订票就跑不了。</p>
-<center><br><img src="/2018/05/04/newyork-trip/seattle.jpg" width="60%" height="60%" alt="seattle"><br>Fig1: 飞跃温村旁的西雅屯<br></center>
-
-<h1 id="6天纽约行"><a href="#6天纽约行" class="headerlink" title="6天纽约行"></a>6天纽约行</h1><p>刨去飞机和大巴时间，我们在纽约呆了六天。如果分区来看纽约，我们就是在曼哈顿呆了六天。因为深浅难测，别的区域我就真的没有考虑过要去了。</p>
-<h2 id="Day-1-通过Hop-on-Hop-off-Bus了解纽约"><a href="#Day-1-通过Hop-on-Hop-off-Bus了解纽约" class="headerlink" title="Day 1: 通过Hop-on Hop-off Bus了解纽约"></a>Day 1: 通过Hop-on Hop-off Bus了解纽约</h2><p>由于攻略并没有做齐全，我们决定先做hop-on hop-off 来了解一下纽约。纽约有很多种hop-on hop-off bus。我们选搭的是Explorer pass上的那个，<strong>叫做Big Bus（帝国大厦入口处附近有上车站点）</strong>。其实票上面写这些bus的停靠站点也不是很清楚。我们只是大致知道帝国大厦旁边有一个。在我们找到自己bus站点前，我们路上遇到了许多卖票的大叔，他们只会告诉你这个不是我们公司的，具体要我们自己找。<strong>作为土温来的人，我认为美国黑人大叔的口音我听不是很懂</strong>，这就直接导致了我们找到了正确的出票大叔还是没闹明白。。他大致以一种奇怪的单词告诉我他要出票给我们了，可是我们没有get到。这可能是城乡差距导致的（城乡差距还体现在很多方便，随后再聊聊）。</p>
-<h3 id="纽约的Hop-on-Hop-off-bus"><a href="#纽约的Hop-on-Hop-off-bus" class="headerlink" title="纽约的Hop-on Hop-off bus"></a>纽约的Hop-on Hop-off bus</h3><p>这种双层旅游观光bus在北美很多地方都有。在纽约Explorer pass上的观光大巴可以让你一天内任意乘坐两条线路，一个是<strong>红色线路包括部分midtown 和downtown主要景点</strong>，一个是<strong>蓝色线路包括部分midtown和uptown的主要景点</strong>。<strong>这两条线路好像通常是早上9点开始运营，晚上5点最后一班车发出</strong>。夜间也有特别线路可以带你游览纽约的夜景，但是不包括在我们的票里，于是就没有了解了。<br>这种大巴的特色就是在很多景点设有站点，你可以到感兴趣的站点下车，拍照，自由到周围游荡，然后再上下一班车（目测是15min一班）。坐在车上，如果你懂英文，会有你听得懂听不懂的口音给你介绍景点和当地奇闻（会免费发放耳机和雨衣）。还有一个好处就是它游览的路线两旁就有很多著名景点，如果没时间逛，顺手拍个照也是极好的。<strong>如果特别短期的旅程，比如1-3天，如无特殊安排和要求，找个晴好天气，坐在大巴上层游览一番，就能感觉不虚此行。</strong>因为，我们坐完大巴后，就觉得。。纽约之行可以画上圆满句号了。。是的，如果不是酒店机票订好，我是要回去了。</p>
-<center><br><img src="https://theexplorepass.com/wp-content/uploads/2016/10/Big-Bus_New_York_Map_May_15_960x-72.jpg" width="60%" height="60%" alt="big bus"><br>Fig2: Big Bus 缩略地图, 详情请官网了解<br></center>
-
-<center><br><img src="/2018/05/04/newyork-trip/wallstreet-bull.JPG" width="60%" height="60%" alt="big bus"><br>Fig3: big-bus路过华尔街的牛<br></center>
-
-<h3 id="第一天的小感悟"><a href="#第一天的小感悟" class="headerlink" title="第一天的小感悟"></a>第一天的小感悟</h3><p><strong>（如果只是纯想捞攻略干货，请忽略这一part）</strong></p>
+      <content type="html"><![CDATA[<p>选择要去纽约旅行，纯粹是两个重度拖延症患者（我以及闺蜜JD小姐）的闲聊结果。估计原因在于我怨念了一下去年由于种种原因最后也没有成行的Banff之旅。记不清楚为何最后决定是去纽约，但是我们俩就你追我赶的定了机票，定了酒店，还很积极的开始做了攻略。<br>
+然而越做攻略越后悔，因为，查到最后就感觉没什么好逛的。那些响彻各大新闻的名字，比如时代广场，比如华尔街，比如中央公园，看攻略觉得那些貌似就是一个广场、一个街区、一个公园。再加之恐怖分子的硝烟不断，川普老爷的政策新闻不断，临走前，我在走与不走的边缘不断徘徊，几度怕死想退票，一直到免费退订期限过去才正式请假。哦，对了，我们的攻略也在不了了之了。好在我和DD同学都很随意，都有着一颗宅在hotel也无怨无悔的心。当我的假期正式开始，我拖着行李箱去了温哥华的公共车站，准备坐大巴去西雅图。啰嗦了那么多，干货来了。</p>
+<h1>大致预订项目</h1>
+<p><strong>PS: 我们的旅行时间是四月底五月初，机票和酒店的价格会随着旅行时间不同有大变化（淡季和旺季，你懂的）。</strong></p>
+<h2 id="机票-大巴"><a class="header-anchor" href="#机票-大巴">¶</a>机票 + 大巴</h2>
+<p>我的出发地点是温哥华，我村距离美国著名的西雅图坐大巴车即可到达。当时在查票价的时候，温哥华飞纽约比西雅图飞纽约要足足贵了一倍（我不明白原因）。大致<em>单程</em>的票价类似是<em><em>温哥华飞纽约要 C$400-500，可是西雅图飞纽约</em>单程</em>大致C$200左右**。又由于DD同学住在西雅图，于是可以愉快的在西雅图呆一晚上第二天中转。我们就果断的选择了从西雅图出发。另外，温哥华去西雅图的大巴有灰狗巴士或者bolt bus，比较而言，**bolt bus 路上时间更短（不去202 奥莱的原因），价格也更便宜（比灰狗便宜几刀）**于是买了bolt bus（另外还有quick bus，就没有了解过。因为在温哥华这边的始发站地点我没搞明白在哪里）。<br>
+在这里，机票的具体价格和大巴的具体价格我就不说了，这些价格会时不时变化，价格不足参考。</p>
+<h2 id="酒店"><a class="header-anchor" href="#酒店">¶</a>酒店</h2>
+<p>出发前查阅了许多酒店，最后由于当时比较好的deal在万豪位于第五大道附近的springhill酒店，就预订了那家。但是这家酒店不是很推荐大家选择，单纯因为四星的价格只给了我三星的酒店设置（虽然我的窗户打开窗帘就可以直接看到帝国大厦，但是，我又不是来看窗外的…）。酒店住的话，推荐大家在曼哈顿中城区（manhattan midtown）附近选择，安全又方便。</p>
+<h2 id="explorer-pass"><a class="header-anchor" href="#explorer-pass">¶</a>Explorer pass</h2>
+<p>纽约各种各样的pass很多，比大多数旅行城市只发给的city pass要丰富。有那种几天随便走但是几百刀的，也有给出一些固定景点在一个本票里让你随便选。还有就是我们选择的这种，列出了一堆景点，你有权利去兑换其中几个地方。具体几个地方，你就可以选了。当然，票价和你选择的景点数目成正比。这种票在expedia和它自己的官网都有出售。具体买哪种，真的要靠你自己的旅行时间长短和计划决定。<strong>提前网上预订有优惠</strong>，就这一个理由，你就应该在你知道你去几天的时候订起来。保守估计自己可以<strong>一天去俩景点观光/一个博物馆</strong>。依据这个估计去订票就跑不了。</p>
+<center>
+<img src="/2018/05/04/newyork-trip/seattle.jpg" width="60%" height="60%" alt="seattle">
+Fig1: 飞跃温村旁的西雅屯
+</center>
+<h1>6天纽约行</h1>
+<p>刨去飞机和大巴时间，我们在纽约呆了六天。如果分区来看纽约，我们就是在曼哈顿呆了六天。因为深浅难测，别的区域我就真的没有考虑过要去了。</p>
+<h2 id="day-1-通过hop-on-hop-off-bus了解纽约"><a class="header-anchor" href="#day-1-通过hop-on-hop-off-bus了解纽约">¶</a>Day 1: 通过Hop-on Hop-off Bus了解纽约</h2>
+<p>由于攻略并没有做齐全，我们决定先做hop-on hop-off 来了解一下纽约。纽约有很多种hop-on hop-off bus。我们选搭的是Explorer pass上的那个，<strong>叫做Big Bus（帝国大厦入口处附近有上车站点）</strong>。其实票上面写这些bus的停靠站点也不是很清楚。我们只是大致知道帝国大厦旁边有一个。在我们找到自己bus站点前，我们路上遇到了许多卖票的大叔，他们只会告诉你这个不是我们公司的，具体要我们自己找。<strong>作为土温来的人，我认为美国黑人大叔的口音我听不是很懂</strong>，这就直接导致了我们找到了正确的出票大叔还是没闹明白。。他大致以一种奇怪的单词告诉我他要出票给我们了，可是我们没有get到。这可能是城乡差距导致的（城乡差距还体现在很多方便，随后再聊聊）。</p>
+<h3 id="纽约的hop-on-hop-off-bus"><a class="header-anchor" href="#纽约的hop-on-hop-off-bus">¶</a>纽约的Hop-on Hop-off bus</h3>
+<p>这种双层旅游观光bus在北美很多地方都有。在纽约Explorer pass上的观光大巴可以让你一天内任意乘坐两条线路，一个是<strong>红色线路包括部分midtown 和downtown主要景点</strong>，一个是<strong>蓝色线路包括部分midtown和uptown的主要景点</strong>。<strong>这两条线路好像通常是早上9点开始运营，晚上5点最后一班车发出</strong>。夜间也有特别线路可以带你游览纽约的夜景，但是不包括在我们的票里，于是就没有了解了。<br>
+这种大巴的特色就是在很多景点设有站点，你可以到感兴趣的站点下车，拍照，自由到周围游荡，然后再上下一班车（目测是15min一班）。坐在车上，如果你懂英文，会有你听得懂听不懂的口音给你介绍景点和当地奇闻（会免费发放耳机和雨衣）。还有一个好处就是它游览的路线两旁就有很多著名景点，如果没时间逛，顺手拍个照也是极好的。**如果特别短期的旅程，比如1-3天，如无特殊安排和要求，找个晴好天气，坐在大巴上层游览一番，就能感觉不虚此行。**因为，我们坐完大巴后，就觉得。。纽约之行可以画上圆满句号了。。是的，如果不是酒店机票订好，我是要回去了。</p>
+<center>
+<img src="https://theexplorepass.com/wp-content/uploads/2016/10/Big-Bus_New_York_Map_May_15_960x-72.jpg" width="60%" height="60%" alt="big bus">
+Fig2: Big Bus 缩略地图, 详情请官网了解
+</center>
+<center>
+<img src="/2018/05/04/newyork-trip/wallstreet-bull.JPG" width="60%" height="60%" alt="big bus">
+Fig3: big-bus路过华尔街的牛
+</center>
+<h3 id="第一天的小感悟"><a class="header-anchor" href="#第一天的小感悟">¶</a>第一天的小感悟</h3>
+<p><strong>（如果只是纯想捞攻略干货，请忽略这一part）</strong></p>
 <ol>
 <li>在纽约大街上认游客有很多特征：相机、衣着、步速、是否保持45度仰视状、有没有一脸懵逼以及敢不敢过马路（这一点估计对天朝人民可以忽略）。纽约人的步伐是特别快的，整个城市活力四射、忙忙碌碌。我在纽城平均每天两万步。当然，选择步行一个原因是交通拥堵（翻译：我穷搭不起taxi，bus也要省着坐），另一个原因是我旅行偏爱走在外面，可以感受风土人情（翻译：同上）。村里来的我，从来没有见过目之所及看不到房顶的房子，纽约到处都是这样的高楼大厦，我时刻都是保持抬头仰望的样子，还嘴里时不时发出“哇”的惊叹（我土我骄傲了吗！）。</li>
 <li>第一天，感觉我不喜欢纽约。觉得大家比温村人冷漠，连要饭的骨子里都有一种骄傲。温村里商场门口的要饭的会开开门，纽约要饭的就以孤傲的态度靠着墙酷酷的站着，伸出一只手，用眼角余光看着你。前者，我会可以走另一扇门，不然会有不好意思的感觉；后者，我会走另一扇门，不然我怕不给钱会被打。我还不喜欢纽约的一点，是城市真的脏乱差，和我们村里他们屯里都没法比，地面都脏的不忍直视（我的小白鞋，村里穿了一年还是白白净净的，纽约七天回来就觉得要扔掉了）。这个城市收垃圾的姿态也很有意思。入夜后，大家把垃圾都堆到街边，等待凌晨左右垃圾车来收走。但问题是，有的时候扔晚了，没赶上点儿，垃圾就这样放在了外面。</li>
 <li>这个城市贫富差距巨大。在第五大道1000万美刀的两居室楼房的下面，入夜后就是流浪汉旁边睡着流浪汉。寸土寸金的纽约曼哈顿中心，时时刻刻都在施工，盖高楼。每一栋楼，无论是什么时候建成的，隔一段可能就要被拔高。楼的外观，无论新楼旧楼，都是方方正正，没有什么现代艺术的美感（好像曼哈顿外围有一片新盖的楼看起来好一点）。但是那种方方正正、挺挺拔拔的楼，彰显的就是一个又一个财团的霸气和骄傲。去他的美感，我可是美帝的金主爸爸们！听说大纽约地区，工资中位数是5-6w美刀。在房租至少2000一个月，日均开销也不低的纽约，我感觉年轻人压力巨大。这里车水马龙，楼房鳞次栉比，夜晚灯火通明，多少纸醉金迷。你在的城市的特征，是不是就是你千万里追寻的那个你呢？</li>
 </ol>
-<h2 id="Day-2-the-MET（大都会博物馆）"><a href="#Day-2-the-MET（大都会博物馆）" class="headerlink" title="Day 2: the MET（大都会博物馆）"></a>Day 2: the MET（大都会博物馆）</h2><p>你如果在纽约只呆一天，又是个懂历史的人，那么哪里都别去，直奔大都会，从开馆待到闭馆就对了。大都会博物馆（MET）的举世闻名，我无需赘言，在里面待上七天七夜也是看不完的。全世界的博物馆无论按什么排名，MET无论怎么排都是前三。其实听说MET在纽约一共有三个馆，这个最大的博物馆在中央公园旁边，另外还有Met Breuer以及The Cloisters museum and gardens。前者较新，收藏内容较现代。后者比较著名，是把欧洲的一整个修道院搬过来。修道院博物馆我们踩点过的，后面会一一道来。</p>
-<h3 id="亚洲展区"><a href="#亚洲展区" class="headerlink" title="亚洲展区"></a>亚洲展区</h3><p>大都会博物馆依据文物所在的地理位置分出了好几大展区。来自中国的我，自然是直奔亚洲展区。</p>
-<p><center><br><img src="/2018/05/04/newyork-trip/ysjb.JPG" width="60%" height="60%" alt="药师经变"><br>Fig4: 药师经变<br></center><br>逛博物馆真的需要很大的历史知识储备，<strong>建议大家在入馆参观前对自己感兴趣的内容做一些背景了解</strong>。在这里做一些个人推荐。</p>
-<ol>
-<li>元代《药师经变》壁画。</li>
-</ol>
+<h2 id="day-2-the-met-大都会博物馆"><a class="header-anchor" href="#day-2-the-met-大都会博物馆">¶</a>Day 2: the MET（大都会博物馆）</h2>
+<p>你如果在纽约只呆一天，又是个懂历史的人，那么哪里都别去，直奔大都会，从开馆待到闭馆就对了。大都会博物馆（MET）的举世闻名，我无需赘言，在里面待上七天七夜也是看不完的。全世界的博物馆无论按什么排名，MET无论怎么排都是前三。其实听说MET在纽约一共有三个馆，这个最大的博物馆在中央公园旁边，另外还有Met Breuer以及The Cloisters museum and gardens。前者较新，收藏内容较现代。后者比较著名，是把欧洲的一整个修道院搬过来。修道院博物馆我们踩点过的，后面会一一道来。</p>
+<h3 id="亚洲展区"><a class="header-anchor" href="#亚洲展区">¶</a>亚洲展区</h3>
+<p>大都会博物馆依据文物所在的地理位置分出了好几大展区。来自中国的我，自然是直奔亚洲展区。</p>
+<center>
+<img src="/2018/05/04/newyork-trip/ysjb.JPG" width="60%" height="60%" alt="药师经变">
+Fig4: 药师经变
+</center>
+逛博物馆真的需要很大的历史知识储备，**建议大家在入馆参观前对自己感兴趣的内容做一些背景了解**。在这里做一些个人推荐。
+1. 元代《药师经变》壁画。
 ]]></content>
       
         <categories>
@@ -369,14 +436,18 @@
     <entry>
       <title><![CDATA[人生长恨水长东]]></title>
       <url>/2017/09/02/changhenge/</url>
-      <content type="html"><![CDATA[<p>#打卡今年读完的一本书，王安忆的《长恨歌》#<br>今天开始，用git写自己的小博客。在reading list这个tag里面，记录的就是自己读过的书。</p>
+      <content type="html"><![CDATA[<p>#打卡今年读完的一本书，王安忆的《长恨歌》#<br>
+今天开始，用git写自己的小博客。在reading list这个tag里面，记录的就是自己读过的书。</p>
 <p>许多人都说，王安忆的笔法，宛如当年的张爱玲，有仿照之嫌疑。不怕笑话，我并没有读过张爱玲的小说。所以，在此，不做比较文学。依据本人粗浅的看法，长恨歌，还是很值得一读的。</p>
 <ol>
-<li><p>刚刚翻开本书的时候，就被王安忆描述的旧时候的上海所深深吸引。到过上海许多次，见过上海许多次，听过上海许多次，然而，一切都不似王安忆笔下的上海。对于十里洋场，我们有着大印象。面对着历史的滚滚洪流，她是一个风情万种的女子，无论如何被裹挟，永远一丝不乱，有条不紊。然而，在长恨歌里面，我感觉我走入了上海的内心。弄堂里，黄浦江边，角角落落，都是这个名叫上海的女子成长的印记。如果你真的如作者一般，了解了那些角落，如果你真的如作者版观察入微，你会看到上海，卸妆后的满面沧桑，也会看到上海青丝间被隐藏的白发。你会明白她，会了解她。知微见著，恍然大悟。</p>
+<li>
+<p>刚刚翻开本书的时候，就被王安忆描述的旧时候的上海所深深吸引。到过上海许多次，见过上海许多次，听过上海许多次，然而，一切都不似王安忆笔下的上海。对于十里洋场，我们有着大印象。面对着历史的滚滚洪流，她是一个风情万种的女子，无论如何被裹挟，永远一丝不乱，有条不紊。然而，在长恨歌里面，我感觉我走入了上海的内心。弄堂里，黄浦江边，角角落落，都是这个名叫上海的女子成长的印记。如果你真的如作者一般，了解了那些角落，如果你真的如作者版观察入微，你会看到上海，卸妆后的满面沧桑，也会看到上海青丝间被隐藏的白发。你会明白她，会了解她。知微见著，恍然大悟。</p>
 </li>
-<li><p>有的书评里面，觉得王安忆小家子气，写的满满都是男女的浅浅情爱，似乎把人生就这么局限于情爱。然而，我却觉得作者有大家风范。胭脂泪，相留醉，几时重？自是人生长恨水长东。本书名为《长恨歌》，主旨写的就是情爱。芸芸众生，大部分的人，都是蝇营狗苟，忙忙碌碌。在本书中，作者非常贴切的写着中国局部地区的某些人某些时期的众生相。笔法细腻，耐人寻味。在王琦瑶一生中的各个转折点，遇到的各个人物，都可以是一类人的缩影。看过许多书，个体和个体之间都非常的分明。然而，事实上，我觉得人和人之间都有类似。能够精准的把类似点归结出来，塑造出人物就是很了不起的事情。无论说作者有无许多佳作，从这一点出发，我觉得此文堪称佳作。</p>
+<li>
+<p>有的书评里面，觉得王安忆小家子气，写的满满都是男女的浅浅情爱，似乎把人生就这么局限于情爱。然而，我却觉得作者有大家风范。胭脂泪，相留醉，几时重？自是人生长恨水长东。本书名为《长恨歌》，主旨写的就是情爱。芸芸众生，大部分的人，都是蝇营狗苟，忙忙碌碌。在本书中，作者非常贴切的写着中国局部地区的某些人某些时期的众生相。笔法细腻，耐人寻味。在王琦瑶一生中的各个转折点，遇到的各个人物，都可以是一类人的缩影。看过许多书，个体和个体之间都非常的分明。然而，事实上，我觉得人和人之间都有类似。能够精准的把类似点归结出来，塑造出人物就是很了不起的事情。无论说作者有无许多佳作，从这一点出发，我觉得此文堪称佳作。</p>
 </li>
-<li><p>可能是我自身的文学修养和人生阅历有限，本文中，人物最终为何会发展到最后的悲惨结局，我一直都没有想明白。一个女人，最开始有及其优越的条件，好比当今的香港小姐季军。年轻貌美，有学问和品位。可以是因为虚荣，第一步就没有走好，给人做了小。然后呢，又因不甘寂寞的重回上海滩。这个人生跟头摔的还不够大吗？多少青春好年华就这样不复返了，难道还不足以成长，明白自己所求吗？偏又和软骨头的男人纠缠不清，还不需要别人负责的养大孩子。最后，养大的也不像是亲生女儿，而是一对争宠的姊妹。老了老了，还把关系搞的乱七八糟，且不甘寂寞的和各色人物来来往往最后招来杀身之祸。看完小说，觉得女主不会成长的样子，貌似也不符合最初对于她的人设。当然，长了这么大，我慢慢觉得，我的世界观很多时候都不足以概括世界和理解世界。所以，在这里就是写一点这个困惑。如果有朝一日回看今日之困惑，可能会恍然大悟吧。</p>
+<li>
+<p>可能是我自身的文学修养和人生阅历有限，本文中，人物最终为何会发展到最后的悲惨结局，我一直都没有想明白。一个女人，最开始有及其优越的条件，好比当今的香港小姐季军。年轻貌美，有学问和品位。可以是因为虚荣，第一步就没有走好，给人做了小。然后呢，又因不甘寂寞的重回上海滩。这个人生跟头摔的还不够大吗？多少青春好年华就这样不复返了，难道还不足以成长，明白自己所求吗？偏又和软骨头的男人纠缠不清，还不需要别人负责的养大孩子。最后，养大的也不像是亲生女儿，而是一对争宠的姊妹。老了老了，还把关系搞的乱七八糟，且不甘寂寞的和各色人物来来往往最后招来杀身之祸。看完小说，觉得女主不会成长的样子，貌似也不符合最初对于她的人设。当然，长了这么大，我慢慢觉得，我的世界观很多时候都不足以概括世界和理解世界。所以，在这里就是写一点这个困惑。如果有朝一日回看今日之困惑，可能会恍然大悟吧。</p>
 </li>
 </ol>
 <p>总之，本书，值得一读。</p>
@@ -400,11 +471,17 @@
     <entry>
       <title><![CDATA[Hello All]]></title>
       <url>/2017/09/02/hello/</url>
-      <content type="html"><![CDATA[<p>Starting from today, I hope that I can keep this blog alive.<br>I am going to post the following things:</p>
+      <content type="html"><![CDATA[<p>Starting from today, I hope that I can keep this blog alive.<br>
+I am going to post the following things:</p>
 <ol>
-<li>Statistic<br> – statistical models<br> – statistical concepts</li>
-<li>Computing science<br> – computing science skills<br> – computing science algorithms</li>
-<li>reading list<br> – Some reviews and comments about the books I read.</li>
+<li>Statistic<br>
+– statistical models<br>
+– statistical concepts</li>
+<li>Computing science<br>
+– computing science skills<br>
+– computing science algorithms</li>
+<li>reading list<br>
+– Some reviews and comments about the books I read.</li>
 </ol>
 ]]></content>
       
