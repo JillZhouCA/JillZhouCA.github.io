@@ -102,25 +102,25 @@
 
 
 
-  <meta name="description" content="对于Windows的吐槽直接就忽略吧，切入主题。 本机环境 64-bit windows7 no CPU  最好的安装方法 install ANACONDA (附上ANACONDA windows Install link)  由于pytorch 在Windows不支持Python 2.7版本，请毫不犹豫下载Anaconda 5.1 的Python 3.6 version。 安装的时候除了全部都是">
-<meta name="keywords" content="package installation,AI programming">
+  <meta name="description" content="¶Introduction Boosting (提升方法) Definition: The term boosting refers to a family of algorithms that are able to convert weak learners to strong learners。 提升方法旨在通过线性组合多个弱分类器，从而构建强分类器以提高分类性能。弱分类器的构建中，每一个训">
+<meta name="keywords" content="statistics,AI,training">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在windows环境下安装pytorch">
-<meta property="og:url" content="https://jillzhouca.github.io/2018/05/11/install-pytorch-win/index.html">
+<meta property="og:title" content="Boosting method 学习 (1)">
+<meta property="og:url" content="https://jillzhouca.github.io/2018/05/22/learning-boosting-1/index.html">
 <meta property="og:site_name" content="Jill Zhou">
-<meta property="og:description" content="对于Windows的吐槽直接就忽略吧，切入主题。 本机环境 64-bit windows7 no CPU  最好的安装方法 install ANACONDA (附上ANACONDA windows Install link)  由于pytorch 在Windows不支持Python 2.7版本，请毫不犹豫下载Anaconda 5.1 的Python 3.6 version。 安装的时候除了全部都是">
+<meta property="og:description" content="¶Introduction Boosting (提升方法) Definition: The term boosting refers to a family of algorithms that are able to convert weak learners to strong learners。 提升方法旨在通过线性组合多个弱分类器，从而构建强分类器以提高分类性能。弱分类器的构建中，每一个训">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-11T23:44:18.687Z">
+<meta property="og:updated_time" content="2018-05-22T22:44:20.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在windows环境下安装pytorch">
-<meta name="twitter:description" content="对于Windows的吐槽直接就忽略吧，切入主题。 本机环境 64-bit windows7 no CPU  最好的安装方法 install ANACONDA (附上ANACONDA windows Install link)  由于pytorch 在Windows不支持Python 2.7版本，请毫不犹豫下载Anaconda 5.1 的Python 3.6 version。 安装的时候除了全部都是">
+<meta name="twitter:title" content="Boosting method 学习 (1)">
+<meta name="twitter:description" content="¶Introduction Boosting (提升方法) Definition: The term boosting refers to a family of algorithms that are able to convert weak learners to strong learners。 提升方法旨在通过线性组合多个弱分类器，从而构建强分类器以提高分类性能。弱分类器的构建中，每一个训">
 
 
 
 
 
 
-  <link rel="canonical" href="https://jillzhouca.github.io/2018/05/11/install-pytorch-win/"/>
+  <link rel="canonical" href="https://jillzhouca.github.io/2018/05/22/learning-boosting-1/"/>
 
 
 
@@ -130,7 +130,7 @@
   };
 </script>
 
-  <title>在windows环境下安装pytorch | Jill Zhou</title>
+  <title>Boosting method 学习 (1) | Jill Zhou</title>
   
 
 
@@ -325,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jillzhouca.github.io/2018/05/11/install-pytorch-win/">
+    <link itemprop="mainEntityOfPage" href="https://jillzhouca.github.io/2018/05/22/learning-boosting-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jill Zhou">
@@ -342,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">在windows环境下安装pytorch
+          <h1 class="post-title" itemprop="name headline">Boosting method 学习 (1)
               
             
           </h1>
@@ -367,7 +367,7 @@
                 
               
 
-              <time title="Created: 2018-05-11 15:51:10 / Modified: 16:44:18" itemprop="dateCreated datePublished" datetime="2018-05-11T15:51:10-07:00">2018-05-11</time>
+              <time title="Created: 2018-05-22 15:14:41 / Modified: 15:44:20" itemprop="dateCreated datePublished" datetime="2018-05-22T15:14:41-07:00">2018-05-22</time>
             
 
             
@@ -389,7 +389,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Environment-setup/" itemprop="url" rel="index"><span itemprop="name">Environment setup</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/STAT/" itemprop="url" rel="index"><span itemprop="name">STAT</span></a></span>
 
                 
                 
@@ -404,8 +404,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/11/install-pytorch-win/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/11/install-pytorch-win/" itemprop="commentsCount"></span>
+                <a href="/2018/05/22/learning-boosting-1/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/22/learning-boosting-1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -441,47 +441,12 @@
       
 
       
-        <p>对于Windows的吐槽直接就忽略吧，切入主题。</p>
-<h4 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h4><ol>
-<li>64-bit</li>
-<li>windows7</li>
-<li>no CPU</li>
-</ol>
-<h4 id="最好的安装方法"><a href="#最好的安装方法" class="headerlink" title="最好的安装方法"></a>最好的安装方法</h4><ol>
-<li><p>install ANACONDA (附上<a href="https://www.anaconda.com/download/#windows" title="windows anaconda install" target="_blank" rel="external">ANACONDA windows Install link</a>)</p>
-<ul>
-<li>由于pytorch 在Windows不支持Python 2.7版本，<strong>请毫不犹豫下载Anaconda 5.1 的Python 3.6 version。</strong></li>
-<li>安装的时候除了全部都是default，最后一个界面是问你要不要了解一下ANACONDA，看心情选择了解与否。</li>
-<li>安装需要admin 权限（告知没有权限的亲）。</li>
-</ul>
-</li>
-<li><p>安装好后将\path\to\installed_location\Continuum\anaconda3，<br>以及path\to\installed\location\Continuum\anaconda3\Scripts加入到PATH，以便未来方便使用</p>
-<ul>
-<li>PATH位于：“Computer &gt; System properties &gt; Advanced system setting”</li>
-<li>本步骤需要admin权限</li>
-<li>开一个Command Prompt, run “conda -V”。如有version信息返回，则为正确。</li>
-</ul>
-</li>
-<li><p>去到<a href="https://pytorch.org/" target="_blank" rel="external">pytorch</a>界面，选择好和你自己环境相关的选项信息，然后run相应的command。</p>
-<ul>
-<li>无需纠结pip还是pip3。在anaconda3环境管理下，pip和pip3是一个东西。当然不能全信，可以run “pip -V”验证，如果version显示为anaconda3环境管理下的python3环境即为正确。</li>
-<li>有时候会被告知安装的pip版本过旧，请根据自动提示信息更新。</li>
-<li>有可能dependence缺少，请依据环境信息更新。</li>
-</ul>
-</li>
-<li><p>安装好后，在command prompt 内 run “py -3”以运行python3。接着run “import torch”。<br>如无问题即完成安装。</p>
-<ul>
-<li>如果找不到Torch module，请尝试以下步骤:<blockquote><ol>
-<li>conda update conda</li>
-<li>conda install mkl=2018</li>
-</ol>
-</blockquote>
-</li>
-</ul>
-</li>
-</ol>
-<h4 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h4><p>之前希望直接安装python3.5 然后再安装pytorch。成功安装pytorch后，运行时候被告知：<br><blockquote><p>from torch._C import *<br>ImportError: DLL load failed: The specified module could not be found</p>
-</blockquote><br>查了类似错误发现是需要补救一些library给Windows。按照网上前辈的方法找好放好后还是不行。不知道是python3.5的坑还是我这台电脑大环境的坑，也未尝试升级python3.6后会不会有改变。但是<strong>还是conda安装简便靠谱，因为conda环境里面已经埋平了一些坑</strong>。</p>
+        <h3 id="introduction-boosting-提升方法"><a class="header-anchor" href="#introduction-boosting-提升方法">¶</a>Introduction Boosting (提升方法)</h3>
+<p>Definition: The term <strong>boosting</strong> refers to a family of algorithms that are able to convert weak learners to strong learners。<br>
+提升方法旨在通过线性组合多个弱分类器，从而构建强分类器以提高分类性能。弱分类器的构建中，每一个训练弱分类器的数据集的训练样本的权重将有所改变。</p>
+<h4 id="example"><a class="header-anchor" href="#example">¶</a>Example:</h4>
+<p>训练样本集 X = {X<sub>1</sub>, X<sub>2</sub>, X<sub>3</sub>}, 其中X中的每一个数据都是i.i.d.且从分布 <em>D</em> 中抽取得到。假设我们现在只有一个弱分类器 h<sub>1</sub>, 且h<sub>1</sub>只能分对数据 X<sub>1</sub> 和X<sub>2</sub>	 , 完全分不对 X<sub>3</sub>,则该分类器的正确率只有 1/3。<br>
+那么此时我们可以尝试得到一个新的分布<em>D’</em>，在此分布中，X<sub>3</sub>类数据的比重有所增大。</p>
 
       
     </div>
@@ -502,9 +467,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/package-installation/" rel="tag"># package installation</a>
+            <a href="/tags/statistics/" rel="tag"># statistics</a>
           
-            <a href="/tags/AI-programming/" rel="tag"># AI programming</a>
+            <a href="/tags/AI/" rel="tag"># AI</a>
+          
+            <a href="/tags/training/" rel="tag"># training</a>
           
         </div>
       
@@ -517,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/04/newyork-trip/" rel="next" title="New York! 纽约！">
-                <i class="fa fa-chevron-left"></i> New York! 纽约！
+              <a href="/2018/05/14/OOD-learning-1/" rel="next" title="OOD learning（1）">
+                <i class="fa fa-chevron-left"></i> OOD learning（1）
               </a>
             
           </div>
@@ -526,10 +493,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/14/OOD-learning-1/" rel="prev" title="OOD learning（1）">
-                OOD learning（1） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -708,7 +671,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#本机环境"><span class="nav-number">1.</span> <span class="nav-text">本机环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最好的安装方法"><span class="nav-number">2.</span> <span class="nav-text">最好的安装方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遇到的坑"><span class="nav-number">3.</span> <span class="nav-text">遇到的坑</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction-boosting-提升方法"><span class="nav-number">1.</span> <span class="nav-text">¶Introduction Boosting (提升方法)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#example"><span class="nav-number">1.1.</span> <span class="nav-text">¶Example:</span></a></li></ol></li></ol></div>
             
 
           </div>
