@@ -10,7 +10,7 @@
 
 <html class="theme-next mist use-motion" lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Jill Zhou">
 <meta property="og:description" content="Introduction Boosting (提升方法)Definition: The term boosting refers to a family of algorithms that are able to convert weak learners to strong learners。提升方法旨在通过线性组合多个弱分类器，从而构建强分类器以提高分类性能。弱分类器的构建中，每一个训练弱分">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-22T22:44:20.829Z">
+<meta property="og:updated_time" content="2018-05-22T23:42:38.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Boosting method 学习 (1)">
 <meta name="twitter:description" content="Introduction Boosting (提升方法)Definition: The term boosting refers to a family of algorithms that are able to convert weak learners to strong learners。提升方法旨在通过线性组合多个弱分类器，从而构建强分类器以提高分类性能。弱分类器的构建中，每一个训练弱分">
@@ -166,7 +166,7 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -177,7 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -367,7 +367,7 @@
                 
               
 
-              <time title="Created: 2018-05-22 15:14:41 / Modified: 15:44:20" itemprop="dateCreated datePublished" datetime="2018-05-22T15:14:41-07:00">2018-05-22</time>
+              <time title="Created: 2018-05-22 15:14:41 / Modified: 16:42:38" itemprop="dateCreated datePublished" datetime="2018-05-22T15:14:41-07:00">2018-05-22</time>
             
 
             
@@ -442,7 +442,7 @@
 
       
         <h3 id="Introduction-Boosting-提升方法"><a href="#Introduction-Boosting-提升方法" class="headerlink" title="Introduction Boosting (提升方法)"></a>Introduction Boosting (提升方法)</h3><p>Definition: The term <strong>boosting</strong> refers to a family of algorithms that are able to convert weak learners to strong learners。<br>提升方法旨在通过线性组合多个弱分类器，从而构建强分类器以提高分类性能。弱分类器的构建中，每一个训练弱分类器的数据集的训练样本的权重将有所改变。</p>
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><p>训练样本集 X = {X~1~, X~2~, X~3~}, 其中X中的每一个数据都是i.i.d.且从分布 <em>D</em> 中抽取得到。假设我们现在只有一个弱分类器 h~1~, 且h~1~只能分对数据 X~1~ 和X~2~     , 完全分不对 X~3~,则该分类器的正确率只有 1/3。<br>那么此时我们可以尝试得到一个新的分布<em>D’</em>，在此分布中，X~3~类数据的比重有所增大。</p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><p>训练样本集 $X = \{X_1, X_2, X_3\}$, 其中X中的每一个数据都是i.i.d.且从分布 <em>D</em> 中抽取得到。假设我们现在只有一个弱分类器 $h_1$, 且$h_1$只能分对数据 $X_1$ 和$X_2$, 完全分不对 $X_3$ ,则该分类器的正确率只有 1/3。<br>那么此时我们可以尝试得到一个新的分布<em>D’</em>，在此分布中，$X_3$类数据的比重有所增大。则可以从此分布抽样得到的训练集中训练出 $h_2$。$h_2$也是一个弱分类器，只对于$X_1$和$X_3$类数据可以分对，而对于$X_2$，将会完全分错。那么依次可知，$h_2$ 和$h_1$对于分类数据类型$X_1$是完全没有问题的，所以$h_1$和$h_2$分类器的组合将会对分类$X_2$ 和$X_3$存在部分误差。则创建一个新的数据集<em>D’’</em>。在这个数据集中增加$X_2$ 和$X_3$的权重。采样训练出新的分类器$h_3$。$h_3$只对于分类$X_1$有问题。那么如果我们对于$h_1$，$h_2$ 和$h_3$ 以某种方式组合起来，我们就会得到一个perfect classifier。</p>
 
       
     </div>
@@ -1227,6 +1227,53 @@
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+    
+  
+
 
   
   
