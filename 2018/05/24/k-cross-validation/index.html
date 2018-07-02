@@ -102,23 +102,25 @@
 
 
 
-  <meta name="description" content="If you only do what you can do, you&apos;ll never be better than what you are.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jill Zhou">
-<meta property="og:url" content="https://jillzhouca.github.io/tags/wechatapp/index.html">
+  <meta name="description" content="part1: 阐释 10-fold 交叉验证的方法 part2: bias-variance trade off part3: 10-fold 的不同应用">
+<meta name="keywords" content="Statistics,ML,Evaluation,Resampling method">
+<meta property="og:type" content="article">
+<meta property="og:title" content="K-fold 交叉验证">
+<meta property="og:url" content="https://jillzhouca.github.io/2018/05/24/k-cross-validation/index.html">
 <meta property="og:site_name" content="Jill Zhou">
-<meta property="og:description" content="If you only do what you can do, you&apos;ll never be better than what you are.">
+<meta property="og:description" content="part1: 阐释 10-fold 交叉验证的方法 part2: bias-variance trade off part3: 10-fold 的不同应用">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-25T00:24:21.462Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jill Zhou">
-<meta name="twitter:description" content="If you only do what you can do, you&apos;ll never be better than what you are.">
+<meta name="twitter:title" content="K-fold 交叉验证">
+<meta name="twitter:description" content="part1: 阐释 10-fold 交叉验证的方法 part2: bias-variance trade off part3: 10-fold 的不同应用">
 
 
 
 
 
 
-  <link rel="canonical" href="https://jillzhouca.github.io/tags/wechatapp/"/>
+  <link rel="canonical" href="https://jillzhouca.github.io/2018/05/24/k-cross-validation/"/>
 
 
 
@@ -128,7 +130,7 @@
   };
 </script>
 
-  <title>Tag: wechatapp | Jill Zhou</title>
+  <title>K-fold 交叉验证 | Jill Zhou</title>
   
 
 
@@ -175,7 +177,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -223,7 +225,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
   </li>
@@ -259,25 +261,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -326,58 +309,228 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>wechatapp<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jillzhouca.github.io/2018/05/24/k-cross-validation/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jill Zhou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/photos/my_avadar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jill Zhou">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/09/04/wechatapp1/" itemprop="url">
-              
-                <span itemprop="name">微信小程序（1）</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">K-fold 交叉验证
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-04T22:43:20-07:00"
-              content="2017-09-04" >
-          09-04
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-24 15:10:59 / Modified: 17:24:21" itemprop="dateCreated datePublished" datetime="2018-05-24T15:10:59-07:00">2018-05-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Statistics/" itemprop="url" rel="index"><span itemprop="name">Statistics</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/24/k-cross-validation/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/24/k-cross-validation/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>part1: 阐释 10-fold 交叉验证的方法</p>
+<p>part2: bias-variance trade off</p>
+<p>part3: 10-fold 的不同应用</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Statistics/" rel="tag"># Statistics</a>
+          
+            <a href="/tags/ML/" rel="tag"># ML</a>
+          
+            <a href="/tags/Evaluation/" rel="tag"># Evaluation</a>
+          
+            <a href="/tags/Resampling-method/" rel="tag"># Resampling method</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/22/learning-boosting-1/" rel="next" title="Boosting method 学习 (1)">
+                <i class="fa fa-chevron-left"></i> Boosting method 学习 (1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/01/install-dryscrape/" rel="prev" title="Mac 环境下 install dryscrape">
+                Mac 环境下 install dryscrape <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -659,6 +812,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
 
   
 
@@ -700,6 +857,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'JillZhouCA',
+            repo: 'jillzhouca.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '0b702c3b940f505ee38463d12d49cfe94a8143ee',
+            
+                client_id: '20d5554ede02feda4305'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 

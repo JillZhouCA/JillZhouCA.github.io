@@ -3,6 +3,73 @@
   
     
     <entry>
+      <title><![CDATA[Mac 环境下 install dryscrape]]></title>
+      <url>/2018/07/01/install-dryscrape/</url>
+      <content type="html"><![CDATA[<h4 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h4><ol>
+<li>macOS High Sierra (version 10.13.5)</li>
+<li>python 3.6</li>
+</ol>
+<h4 id="遇到的问题-faced-problem-："><a href="#遇到的问题-faced-problem-：" class="headerlink" title="遇到的问题 (faced problem)："></a>遇到的问题 (faced problem)：</h4><pre><code>如下：
+</code></pre><blockquote><p>Project ERROR: Xcode not set up properly. You may need to confirm the license agreement by running /usr/bin/xcodebuild.<br>error: [Errno 2] No such file or directory: ‘src/webkit_server’</p>
+</blockquote>
+<h4 id="真实的原因-reason"><a href="#真实的原因-reason" class="headerlink" title="真实的原因 (reason):"></a>真实的原因 (reason):</h4><pre><code>webkit-server 没有被安装成功
+</code></pre><h4 id="尝试的方法-tried-solution"><a href="#尝试的方法-tried-solution" class="headerlink" title="尝试的方法 (tried solution):"></a>尝试的方法 (tried solution):</h4><pre><code>以为是因为Xcode的协议没有达成，于是拼命去想agree这个协议。
+尝试了两次，以及升级了Xcode，依旧没有反应。
+</code></pre><blockquote><p>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer<br>sudo xcodebuild -license</p>
+</blockquote>
+<h4 id="正确的方法-real-solution"><a href="#正确的方法-real-solution" class="headerlink" title="正确的方法 (real solution):"></a>正确的方法 (real solution):</h4><pre><code>安装qt5.5从而正确安装webkit-server。
+</code></pre><blockquote><p>brew install <a href="mailto:qt@5.5" target="_blank" rel="external">qt@5.5</a><br>export PATH=”<a href="mailto:/usr/local/opt/qt@5.5" target="_blank" rel="external">/usr/local/opt/qt@5.5</a>/bin:$PATH”<br>pip install webkit-server</p>
+</blockquote>
+<p>这个包的安装是为了方便抓取一些有javascript主写的网页。最近研究抓网页，到阶段会总结经验。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Environment setup </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> package installation </tag>
+            
+            <tag> NLP </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[K-fold 交叉验证]]></title>
+      <url>/2018/05/24/k-cross-validation/</url>
+      <content type="html"><![CDATA[<p>part1: 阐释 10-fold 交叉验证的方法</p>
+<p>part2: bias-variance trade off</p>
+<p>part3: 10-fold 的不同应用</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Statistics </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Statistics </tag>
+            
+            <tag> ML </tag>
+            
+            <tag> Evaluation </tag>
+            
+            <tag> Resampling method </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Boosting method 学习 (1)]]></title>
       <url>/2018/05/22/learning-boosting-1/</url>
       <content type="html"><![CDATA[<h3 id="Introduction-Boosting-提升方法"><a href="#Introduction-Boosting-提升方法" class="headerlink" title="Introduction Boosting (提升方法)"></a>Introduction Boosting (提升方法)</h3><p>Definition: The term <strong>boosting</strong> refers to a family of algorithms that are able to convert weak learners to strong learners。<br>提升方法旨在通过线性组合多个弱分类器，从而构建强分类器以提高分类性能。弱分类器的构建中，每一个训练弱分类器的数据集的训练样本的权重将有所改变。</p>
@@ -474,14 +541,14 @@
   
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>/categories/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
