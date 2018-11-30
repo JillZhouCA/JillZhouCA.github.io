@@ -3,6 +3,107 @@
   
     
     <entry>
+      <title><![CDATA[Ubuntu 18.04 LTS 系统安装]]></title>
+      <url>/2018/11/29/UbuntuInstallation/</url>
+      <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>本人系统原来在Ubuntu 16.04 LTS, 后来头晕脑胀，点了升级，升级到 Ubuntu 18.04 LTS的过程中，本来一切还算顺利。但是可能存在configuration file的问题，一直报错。报错原因有：</p>
+<ul>
+<li>位于 /etc/modprobe.d/blacklist-nouveau.conf 里面，不知为何写的不是 “blacklist nouveau”，写的是 “blackout nouveau”。我由于不过脑子，不仔细阅读报错信息，一度改错。</li>
+<li>进入了infinite login loop 的模式。受害者并非我一人，还有网上广大网友们。但是照着很多帖子改都无果。参见：<a href="https://blog.csdn.net/tjuyanming/article/details/79267984" target="_blank" rel="external">https://blog.csdn.net/tjuyanming/article/details/79267984</a></li>
+</ul>
+<p>不得不打开tty terminal (Ctrl + Alt + F2)，进行数据备份，U盘可以在 “/media/username/“里面找到。准备重装系统。</p>
+<h2 id="Ubuntu系统重装盘准备工作"><a href="#Ubuntu系统重装盘准备工作" class="headerlink" title="Ubuntu系统重装盘准备工作"></a>Ubuntu系统重装盘准备工作</h2><pre><code>这个Ubuntu自己做了详细的介绍，无需参考任何别的资料，照着做： https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0
+</code></pre><p>（<strong>Note:</strong> 这个是针对Windows的，针对Mac的也有，中文英文的貌似都有，如果你的U盘之前被用做过重装盘，被用过的盘的那一部分是不能直接被读取使用的，需要格式化。格式化的方法：<a href="https://www.sysgeek.cn/format-usb-drives-windows-10/" target="_blank" rel="external">https://www.sysgeek.cn/format-usb-drives-windows-10/</a> 由于我自己是用Windows电脑格式化的，我就用了diskpart, 别的电脑或许有别的格式化全盘的方法）</p>
+<h2 id="开始重装"><a href="#开始重装" class="headerlink" title="开始重装"></a>开始重装</h2><p>准备好U盘后，重装非常简单。如果你的电脑有一开机就直接boot那个重装盘的设置，那就最好了，你就可以直接获取信息重装。我的电脑没有，因为之前有装好的系统，所以还是习惯性的boot系统。那么只要在开机的时候频繁按F12就可以了。按F12后选择boot安装U盘就好。</p>
+<pre><code>接下来，就直接按照Ubuntu网上自己的安装指南安装就可以了：https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0
+</code></pre><p>（<strong>Note:</strong> 注意一下，我本来希望尽力保留电脑里面原来/home/ directory的东西，安装Ubuntu的时候，它检测得到我之前有ubuntu的系统，问我需不需要保留原系统的/home/文件的基础上再安装，这样就不用洗盘重装了。我第一次是选择了这个，然鹅。。装了整整24小时也没有结束，遂放弃之）</p>
+<h2 id="安装Nvidia-driver-amp-pytorch（花了很多时间研究成功的步骤）"><a href="#安装Nvidia-driver-amp-pytorch（花了很多时间研究成功的步骤）" class="headerlink" title="安装Nvidia driver &amp; pytorch（花了很多时间研究成功的步骤）"></a>安装Nvidia driver &amp; pytorch（花了很多时间研究成功的步骤）</h2><p>由于做机器学习的相关工作，NVIDIA GPU加速对我而言很重要，原来的系统默认的是一个nouveau开源显卡程序，必须取代之。<br>以下命令都是在terminal中操作的：</p>
+<ol>
+<li>第一步，禁用nouveau:</li>
+</ol>
+<ul>
+<li><p>首先要修改blacklist.conf (sudo vim /etc/modprobe.d/blacklist.conf):</p>
+<blockquote><p>blacklist vga16fb<br>blacklist nouveau<br>blacklist rivafb<br>blacklist nvidiafb<br>blacklist rivatv</p>
+</blockquote>
+<p><strong>Note:</strong> 以上的blacklist列项需要添加在blacklist.conf文件的最后。这其中，我只理解要blacklist nouveau, 就是把nouveau加入到黑名单，其余的我不懂。</p>
+</li>
+<li><p>其次再修改blacklist-nouveau.conf（sudo vim /etc/modprobe.d/blacklist-nouveau.conf）:</p>
+<blockquote><p>blacklist nouveau<br>blacklist lbm-nouveau<br>options nouveau modeset=0<br>alias nouveau off<br>alias lbm-nouveau off</p>
+</blockquote>
+<p><strong>Note:</strong> blacklist-nouveau.conf 原是没有的，这个是我自己创建的。文档里就写了上述内容。</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>第二步，更新重启：<br>直接操作以下命令：</p>
+<blockquote><p>sudo update-initramfs -u<br>reboot</p>
+</blockquote>
+<p><strong>Note</strong>: 以上皆是参照：<a href="https://blog.mahonex.com/index.php/2018/07/18/ubuntu-18-04-%E5%AE%89%E8%A3%85nvidia-%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/" target="_blank" rel="external">https://blog.mahonex.com/index.php/2018/07/18/ubuntu-18-04-%E5%AE%89%E8%A3%85nvidia-%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</a></p>
+</li>
+<li><p>第三步就可以安装 NVIDIA显卡驱动了。<br>参考：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>之前我是通过命令行安装的，但是安装后老是提示说有问题，修复许久无果。于是不得已选择了Ubuntu自己带的software安装软件。推荐用这个。好像可以比自己通过命令行装更符合系统的configuration。<br>直接搜索“software updater” -&gt; 点”setting” -&gt; 点”Using NVIDIA driver metapackage from nvidia-driver-390” -&gt; 选择 “Apply Changes”.<br><center><br><img src="/2018/11/29/UbuntuInstallation/software_updater.png" width="80%" height="80%" alt="software_updater"><br>Fig1: Software updater<br></center><br><center><br><img src="/2018/11/29/UbuntuInstallation/setting.png" width="80%" height="80%" alt="setting"><br>Fig2: Setting<br></center><br><strong>NOTE：安装结束请重启！</strong></p>
+</li>
+<li><p>给CUDA手动降级<br>参考：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>由于CUDA 9.0仅支持GCC 6.0及以下版本，而Ubuntu 18.04预装GCC版本为7，手动降级：<br>打开terminal，直接操作以下命令：</p>
+<blockquote><p>sudo apt-get install gcc-4.8<br>sudo apt-get install g++-4.8<br>作者：wuzhiwuweisun<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+<p>装完后进入到/usr/bin目录下,执行</p>
+<blockquote><p>输入：<br>ls -l gcc*<br>显示（我这里由于已经改过了，所以第一行是链接到4.8了，原来的是链接到7.3）：<br>lrwxrwxrwx 1 root root      7 9月  12 20:43 gcc -&gt; gcc-4.8<br>-rwxr-xr-x 1 root root 772280 3月  19  2018 gcc-4.8<br>lrwxrwxrwx 1 root root     22 4月  15 12:52 gcc-7 -&gt; x86_64-linux-gnu-gcc-7<br>lrwxrwxrwx 1 root root      8 4月   7 02:04 gcc-ar -&gt; gcc-ar-7<br>-rwxr-xr-x 1 root root  27088 3月  19  2018 gcc-ar-4.8<br>lrwxrwxrwx 1 root root     25 4月  15 12:52 gcc-ar-7 -&gt; x86_64-linux-gnu-gcc-ar-7<br>lrwxrwxrwx 1 root root      5 4月   7 02:04 gcc.bak -&gt; gcc-7<br>lrwxrwxrwx 1 root root      8 4月   7 02:04 gcc-nm -&gt; gcc-nm-7<br>-rwxr-xr-x 1 root root  27088 3月  19  2018 gcc-nm-4.8<br>lrwxrwxrwx 1 root root     25 4月  15 12:52 gcc-nm-7 -&gt; x86_64-linux-gnu-gcc-nm-7<br>lrwxrwxrwx 1 root root     12 4月   7 02:04 gcc-ranlib -&gt; gcc-ranlib-7<br>-rwxr-xr-x 1 root root  27088 3月  19  2018 gcc-ranlib-4.8<br>lrwxrwxrwx 1 root root     29 4月  15 12:52 gcc-ranlib-7 -&gt; x86_64-linux-gnu-gcc-ranlib-7<br>作者：wuzhiwuweisun<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+<p>发现gcc链接到gcc-7.3, 需要将它改为链接到gcc-4.8，方法如下:</p>
+<blockquote><p>sudo mv gcc gcc.bak #备份<br>sudo ln -s gcc-4.8 gcc #重新链接<br>作者：wuzhiwuweisun<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+<p>对g++做同样的修改：</p>
+<blockquote><p>ls -l g++*<br>sudo mv g++ g++.bak<br>sudo ln -s g++-4.8 g++<br>作者：wuzhiwuweisun<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+<p>最后看gcc和g++版本号,如果是4.8代表修改成功：</p>
+<blockquote><p>mayunteng@mayunteng-OptiPlex-7040:/usr/bin$ gcc –version<br>gcc (Ubuntu 4.8.5-4ubuntu8) 4.8.5<br>Copyright (C) 2015 Free Software Foundation, Inc.<br>This is free software; see the source for copying conditions.  There is NO<br>warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
+<p>mayunteng@mayunteng-OptiPlex-7040:/usr/bin$ g++ –version<br>g++ (Ubuntu 4.8.5-4ubuntu8) 4.8.5<br>Copyright (C) 2015 Free Software Foundation, Inc.<br>This is free software; see the source for copying conditions.  There is NO<br>warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br>作者：wuzhiwuweisun<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+</li>
+<li><p>安装CUDA 9.0<br>参考：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>首先去官网下载CUDA安装包，注意根据你的系统选，最后一项选择runfile(local)。<br>CUDA最新版下载地址：<a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="external">https://developer.nvidia.com/cuda-downloads</a><br>以前版本的CUDA：<a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="external">https://developer.nvidia.com/cuda-toolkit-archive</a><br>找到CUDA 9.0版本下载，几个小的更新包可以不安装。<br>进入刚刚下载的CUDA包的路径，执行命令：</p>
+<blockquote><p>sudo sh cuda_9.0.176_384.81_linux.run</p>
+</blockquote>
+<p>然后按照下面的执行：</p>
+<blockquote><p>Do you accept the previously read EULA? (accept/decline/quit): accept You are attemptingto install on an unsupported configuration. Do you wish to continue? ((y)es/(n)o) [ default is no ]: y<br>Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 352.39? ((y)es/(n)o/(q)uit): n<br>Install the CUDA 8.0 Toolkit? ((y)es/(n)o/(q)uit): y<br>Enter Toolkit Location [ default is /usr/local/cuda-8.0 ]:<br>Do you want to install a symbolic link at /usr/local/cuda? ((y)es/(n)o/(q)uit): y Install the CUDA 8.0 Samples? ((y)es/(n)o/(q)uit): y Enter CUDA Samples Location [ default is /home/kyle ]:</p>
+<p>作者：wuzhiwuweisun<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+</li>
+<li><p>配置CUDA ENVIRONMENT<br>参考：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>打开.bashrc文件，文件的末尾添加下面两行，注意修改成你的安装路径：</p>
+<blockquote><p>sudo vim “~/.bashrc”<br>export PATH=”/usr/local/cuda-9.0/bin:$PATH” #这里添加路径出错的话最好加上双引号把路径括起来，这里已经加上了双引号<br>export LD_LIBRARY_PATH=”/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH”<br>作者：wuzhiwuweisun<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+<p>测试一下CUDA是否安装成功：</p>
+<blockquote><p>输入：<br>nvcc -V<br>显示：<br>nvcc: NVIDIA (R) Cuda compiler driver<br>Copyright (c) 2005-2017 NVIDIA Corporation<br>Built on Fri_Sep__1_21:08:03_CDT_2017<br>Cuda compilation tools, release 9.0, V9.0.176<br>作者：wuzhiwuweisun<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+<p>编译 CUDA Samples：</p>
+<blockquote><p>mayunteng@mayunteng-OptiPlex-7040:~$ cd NVIDIA_CUDA-9.0_Samples/0_Simple/vectorAdd<br>mayunteng@mayunteng-OptiPlex-7040:~/NVIDIA_CUDA-9.0_Samples/0_Simple/vectorAdd$ make<br>mayunteng@mayunteng-OptiPlex-7040:~/NVIDIA_CUDA-9.0_Samples/0_Simple/vectorAdd$ ./vectorAdd<br>[Vector addition of 50000 elements]<br>Copy input data from the host memory to the CUDA device<br>CUDA kernel launch with 196 blocks of 256 threads<br>Copy output data from the CUDA device to the host memory<br>Test PASSED<br>Done</p>
+<p>作者：wuzhiwuweisun<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+</li>
+<li><p>安装CUDNN 7.05<br>参考：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>从官网：<a href="https://developer.nvidia.com/cudnn" target="_blank" rel="external">https://developer.nvidia.com/cudnn</a> 找到这个版本，对应自己的系统，下载后解压缩。<br>先进入压缩包解压后的路径，再执行下面的指令</p>
+<blockquote><p>cd cuda<br>sudo cp lib64/<em> /usr/local/cuda/lib64/<br>sudo cp include/</em> /usr/local/cuda/include/<br>sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</p>
+<p>作者：wuzhiwuweisun<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wuzhiwuweisun/article/details/82753403" target="_blank" rel="external">https://blog.csdn.net/wuzhiwuweisun/article/details/82753403</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+<p>到此，CUDNN安装完成！</p>
+</li>
+<li><p>安装Pytorch<br>这个我就很简单了，直接是按照pytorch官网安装测试的。直接到<a href="https://pytorch.org/" target="_blank" rel="external">https://pytorch.org/</a> 选好你的系统的对应信息，然后用anaconda安装就好了。anaconda的安装也可以参考wuzhiwuweisun文章开头写的。在这里就不累赘重复了。</p>
+</li>
+</ol>
+<p>（Note: 这个过程，我找了很多资料，失败了很多次。这个是最终适合我的流程。依据个人系统不同，可能不具备普适性，主要记下来给大家参考以及自用。）</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Environment setup </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> package installation </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hash Tables and Arrays]]></title>
       <url>/2018/08/21/HashtableString/</url>
       <content type="html"><![CDATA[<h1 id="Hash-Tables"><a href="#Hash-Tables" class="headerlink" title="Hash Tables"></a>Hash Tables</h1><h2 id="Advantage-for-dealing-with-individual-data"><a href="#Advantage-for-dealing-with-individual-data" class="headerlink" title="Advantage for dealing with individual data"></a>Advantage for dealing with individual data</h2><ol>
